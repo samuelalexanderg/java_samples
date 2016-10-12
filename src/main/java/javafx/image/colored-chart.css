@@ -1,0 +1,21 @@
+/**
+ * file: colored-chart.css
+ *   Place in same directory as DynamicallyColoredBarChartWithLabel.java
+ *   Ensure that the build system copies this file to the build output directory.
+ */
+.root {
+  -fx-bar1: 	blue;
+  -fx-bar2:     green;
+  -fx-bar3:     red;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: linear-gradient(#2A5058, #61a2b1); }
+.default-color1.chart-bar { -fx-bar-fill: -fx-bar2; }
+.default-color2.chart-bar { -fx-bar-fill: -fx-bar3; }
+
+.level-legend {
+  -fx-padding: 10;
+  -fx-border-width: 2;
+  -fx-background-color: rgba(211, 211, 211, 0.5);
+  -fx-border-color: derive(rgba(211, 211, 211, 0.7), 10%);
+}

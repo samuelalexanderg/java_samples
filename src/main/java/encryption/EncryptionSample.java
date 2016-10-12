@@ -13,7 +13,7 @@ import com.google.gson.GsonBuilder;
 
 import sun.misc.BASE64Encoder;
 
-public class EnryptionSample {
+public class EncryptionSample {
 
 	public static String encrypt(String plainText, String encryptionKey)
 			throws Exception {
