@@ -1,24 +1,26 @@
 package date;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class CalendarTest {
-	public static final String SF_DATETIME_FORMAT = "YYYY-MM-dd'T'hh:mm:ss.S'Z'";
+	public static final String SF_DATETIME_FORMAT = "YYYY-MM-dd'T'HH:mm:ss";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 //		getQuarterEnd();
 		testSDF();
 	}
 
-	private static void testSDF() {
+	private static void testSDF() throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat(SF_DATETIME_FORMAT);
-		GregorianCalendar cal = new GregorianCalendar();
-		System.out.println(sdf.format(cal.getTime()));
-		cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-		System.out.println(sdf.format(cal.getTime()));
+		System.out.println(sdf.parse("2017-08-04T16:45:30"));
+//		GregorianCalendar cal = new GregorianCalendar();
+//		System.out.println(sdf.format(cal.getTime()));
+//		cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+//		System.out.println(sdf.format(cal.getTime()));
 	}
 
 	private static final void doCalOperation() {

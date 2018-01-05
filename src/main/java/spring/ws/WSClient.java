@@ -22,15 +22,20 @@ public class WSClient {
     }
 
     public static String executeService() {
+//        StreamSource source = new StreamSource(
+//                new File("/home/sam/work/projects/s/connectors/zuora/sample/request.xml"));
         StreamSource source = new StreamSource(
-                new File("/home/sam/work/projects/s/connectors/sample/get_customer_request.xml"));
+                new File("/home/sam/work/projects/s/connectors/zuora/sample/query_request.xml"));
+//        StreamSource source = new StreamSource(
+//                new File("/home/sam/work/projects/s/connectors/zuora/sample/queryMore_request.xml"));
 
         StringWriter writer = new StringWriter();
         StreamResult result = new StreamResult(writer);
 
-        webServiceTemplate.setDefaultUri("http://localhost:3030/workday/dummy/revenue");
+        webServiceTemplate.setDefaultUri("https://apisandbox.zuora.com/apps/services/a/38.0");
 //        webServiceTemplate.sendSourceAndReceive()
-        webServiceTemplate.sendSourceAndReceiveToResult(source, new UsernameTokenHandler(), result);
+//        webServiceTemplate.sendSourceAndReceiveToResult(source, new UsernameTokenHandler(), result);
+        webServiceTemplate.sendSourceAndReceiveToResult(source, new SessionHeaderHandler(), result);
 //        webServiceTemplate.
 //        System.out.println(writer.toString());
 

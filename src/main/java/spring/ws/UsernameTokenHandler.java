@@ -19,6 +19,10 @@ import java.io.IOException;
 public class UsernameTokenHandler implements WebServiceMessageCallback {
     @Override
     public void doWithMessage(WebServiceMessage webServiceMessage) throws IOException, TransformerException {
+        if (true) {
+            return;
+        }
+
         Document document = ((SoapMessage) webServiceMessage).getDocument();
 
         WSSecUsernameToken builder = new WSSecUsernameToken();

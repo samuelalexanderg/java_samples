@@ -8,12 +8,13 @@ import java.util.regex.Pattern;
 
 public class StringTest {
 	public static void main(String[] args) {
+		System.out.println(Integer.parseInt("22"));
 //		substringTest();
 //		stringBuilderTest();
 //		replaceToken();
 //		replaceAll();
 //		subStringUsingIndex();
-		patternMatch();
+//		patternMatch();
 //		compareTo();
 //		replacePattern();
 //		doubleFormat();
